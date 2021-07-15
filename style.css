@@ -26,13 +26,12 @@ section {
 }
 
 section.alternate-background {
+  display: flex;
+  flex-direction: column;
   background-color: #00a699;
   color: #fff;
 }
 
-main img {
-  width: 100px;
-}
 
 /* ---  Groups & Items --- */
 
@@ -64,14 +63,29 @@ header {
   color: #fff;
 }
 
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  padding-left: 0;
+}
 header nav ul li {
   list-style-type: none;
+  display: inline;
+  padding-bottom: 20px;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding: 0 20px 0 20px;
+}
+
+header nav ul li:last-child a {
+  margin-right: 0;
 }
 
 header nav ul li a:hover {
@@ -85,8 +99,16 @@ form {
   padding: 10px;
 }
 
+form div {
+  display: flex;
+  justify-content: space-between;
+}
 form label {
   font-weight: bold;
+}
+.test {
+  display: flex;
+  flex-direction: column;
 }
 
 form select,
@@ -104,6 +126,18 @@ form button {
   width: 100%;
 }
 
+/*--------Pictures----------*/
+main img {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 /* -------  Footer ------- */
 
 footer {
@@ -117,3 +151,41 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  header nav {
+    margin-top: 12px;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  form div {
+    flex-direction: column;
+  }
+  form button {
+    flex: 1;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .container .image {
+    width: 45%;
+    margin: 5px;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}
