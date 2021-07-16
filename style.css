@@ -59,13 +59,14 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 60px;
   color: #fff;
 }
 
 header nav {
   display: flex;
   justify-content: center;
+  flex-direction: row;
 }
 
 header nav ul {
@@ -105,10 +106,6 @@ form div {
 }
 form label {
   font-weight: bold;
-}
-.test {
-  display: flex;
-  flex-direction: column;
 }
 
 form select,
@@ -153,13 +150,23 @@ footer p {
 /* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
+  body {
+    display: grid
+  }
   header {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    align-items: center;
+    padding: 0;
+  }
+  .logo {
+    margin-left: 10px;
   }
   header nav {
     margin-top: 12px;
+  }
+  header nav ul {
+    align-items: center;
   }
   form {
     display: flex;
@@ -172,11 +179,13 @@ footer p {
   }
   form button {
     flex: 1;
+    margin-left: 5px;
   }
   .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
   }
   .container .image {
     width: 45%;
@@ -187,5 +196,6 @@ footer p {
     justify-content: center;
     align-content: center;
     align-items: center;
+    flex: 1 1 0;
   }
 }
